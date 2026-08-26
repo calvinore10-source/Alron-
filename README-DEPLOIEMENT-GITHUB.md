@@ -4,22 +4,16 @@ Tous les fichiers de ce dossier sont **à plat, sans sous-dossier** — pensé p
 un upload en une seule fois depuis un téléphone, où il n'est pas possible de
 glisser-déposer une arborescence de dossiers dans GitHub.
 
-## 1. À compléter avant publication
+## 1. Il ne reste qu'une seule chose à compléter
 
-Le site est fonctionnel mais contient encore des **placeholders** à remplacer
-dans `index.html` :
+Tout est déjà rempli (email, Facebook, Ko-fi, notice) sauf l'archive de
+l'application elle-même :
 
-| Élément | Repère dans le fichier | À remplacer par |
+| Élément | Repère dans le fichier | À faire |
 |---|---|---|
-| Email de contact | `votre-email@exemple.fr` (2 occurrences) | votre adresse réelle |
-| Lien Facebook | `VotrePageAlron` (2 occurrences) | l'URL de votre page |
-| Lien Ko-fi | `VotrePseudoKofi` (2 occurrences) | votre lien Ko-fi |
-| Archive de l'application | fichier `alron.zip` | à déposer vous-même (voir `LISEZ-MOI-telechargement.txt`) |
-| Notice utilisateur | fichier `notice-alron.pdf` | à déposer vous-même (voir `LISEZ-MOI-notice.txt`) |
+| Archive de l'application | fichier `alron.zip` | à déposer une fois le build finalisé (voir `LISEZ-MOI-telechargement.txt`) |
 
-Ces modifications peuvent se faire directement dans l'éditeur de fichier
-intégré à GitHub (ouvrez `index.html` dans le dépôt, appuyez sur le crayon
-"Edit", cherchez le texte à remplacer, puis "Commit changes").
+Aucune autre modification n'est nécessaire dans `index.html`.
 
 ## 2. Publier sur GitHub Pages (gratuit, depuis un téléphone)
 
@@ -41,12 +35,12 @@ intégré à GitHub (ouvrez `index.html` dans le dépôt, appuyez sur le crayon
 Chaque nouvelle modification (via l'éditeur GitHub ou un nouvel upload)
 republie le site automatiquement en quelques dizaines de secondes.
 
-## 3. Ajouter les fichiers manquants plus tard
+## 3. Ajouter le zip de l'application une fois prêt
 
-Pour déposer votre notice PDF ou le zip de l'exe compilé plus tard, revenez
-sur le dépôt et utilisez à nouveau **Add file > Upload files** — les
-nouveaux fichiers `notice-alron.pdf` et `alron.zip` viendront simplement
-s'ajouter à la racine, au même niveau que les autres.
+Quand votre build sera peaufiné, revenez sur le dépôt et utilisez
+**Add file > Upload files** pour déposer `alron.zip` à la racine, au même
+niveau que les autres fichiers — le bouton "Télécharger l'archive" de la
+page fonctionnera alors immédiatement, sans aucune autre modification.
 
 ## 4. Brancher un vrai nom de domaine plus tard (optionnel)
 
