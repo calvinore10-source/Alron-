@@ -1,0 +1,9 @@
+Placez ici l'archive .zip contenant l'exécutable Alron compilé (build Tauri),
+sous le nom exact : alron.zip
+
+Le zip fourni par Calvin (Alron-complet-corrige.zip) contient le CODE SOURCE
+du projet, pas un exécutable compilé. Il faut d'abord lancer :
+  npm install
+  npm run build
+(voir DEMARRER-ICI.txt à la racine du projet source), récupérer le résultat
+dans src-tauri/target/release/, le compresser en .zip, puis le déposer ici.

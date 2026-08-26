@@ -1,0 +1,32 @@
+POLITIQUE DE CONFIDENTIALITÉ (RGPD) — ALRON
+Version 1.0
+
+1. Objet
+Cette notice explique quelles données personnelles sont traitées par le logiciel Alron dans le cadre de son utilisation par un·e enseignant·e, pourquoi, et quels sont les droits des personnes concernées (élèves et responsables légaux).
+
+2. Responsable du traitement
+Alron fonctionne entièrement hors-ligne : les données saisies restent stockées localement, sur le poste ou la clé USB de l'enseignant·e qui les utilise. C'est donc l'enseignant·e utilisateur·rice, et non l'auteur du logiciel (Calvin ORÉ), qui est responsable du traitement au sens du RGPD pour les données qu'il/elle saisit. L'auteur du logiciel n'a accès à aucune donnée d'élève, à aucun moment.
+
+3. Données traitées
+Selon l'usage qui en est fait, Alron peut contenir : identité des élèves (nom, prénom, date de naissance) ; scolarité (classe, régime — externe/demi- pensionnaire/interne, redoublement) ; évaluations, notes et appréciations ; suivi de séances (participation, observations, incidents) ; coordonnées d'un responsable légal, si renseignées. Certaines fiches peuvent aussi contenir des données de santé (catégorie particulière, article 9 du RGPD) lorsqu'un Projet d'Accueil Individualisé (PAI) est renseigné (allergies, traitement, protocole d'urgence), ainsi que l'existence d'aménagements (PAP, PPRE, PPS) pouvant révéler une situation de handicap ou de difficulté scolaire.
+
+4. Finalités
+Ces données sont traitées dans le seul cadre du suivi pédagogique des élèves par leur enseignant·e : préparation et animation des séances, évaluation, calcul de moyennes, rédaction de bulletins et d'appréciations, suivi des aménagements et protocoles médicaux, archivage pédagogique d'une année sur l'autre.
+
+5. Base légale
+Le traitement relève de l'exécution d'une mission d'intérêt public (article 6.1.e du RGPD), l'enseignement faisant partie des missions de service public de l'établissement. Pour les données de santé (PAI), le traitement est nécessaire à la sauvegarde des intérêts vitaux de l'élève et à la mise en œuvre du protocole d'accueil individualisé défini avec la famille et la médecine scolaire.
+
+6. Destinataires
+Aucune donnée d'élève n'est transmise à un tiers par le logiciel : ni à l'auteur d'Alron, ni à un serveur externe, ni à aucun service en ligne. Le seul flux réseau du logiciel concerne, le cas échéant, l'activation de la licence de l'enseignant·e (voir Paramètres > RGPD & Sécurité) — cette activation ne contient aucune information sur les élèves. Les données d'élèves ne quittent l'appareil de l'enseignant·e que si celui-ci/celle-ci choisit explicitement de les exporter (bulletins PDF, export CSV, etc.), sous sa seule responsabilité.
+
+7. Stockage et sécurité
+Les données sont stockées dans une base locale sur l'appareil de l'enseignant·e. Alron propose des outils intégrés pour renforcer leur protection : verrouillage par mot de passe, chiffrement, journal d'accès, sauvegardes automatiques (voir Paramètres > RGPD & Sécurité et Paramètres > Gestion des données). Il appartient à l'enseignant·e de sécuriser physiquement son appareil ou sa clé USB (perte, vol) et de ne transmettre les exports qu'à des destinataires autorisés.
+
+8. Durée de conservation
+Les données sont conservées le temps nécessaire au suivi pédagogique de l'élève, et peuvent être archivées d'une année sur l'autre (voir l'onglet Archives de l'application). Il est recommandé de supprimer les données d'un élève qui a quitté l'établissement dès que leur conservation n'est plus nécessaire, via les outils de suppression prévus à cet effet (Paramètres > RGPD & Sécurité).
+
+9. Droits des personnes concernées
+Conformément au RGPD, toute personne concernée (élève majeur·e, ou responsable légal pour un·e élève mineur·e) dispose d'un droit d'accès, de rectification, d'effacement et de limitation des données la concernant. Ces demandes doivent être adressées à l'enseignant·e qui utilise le logiciel (responsable du traitement, voir point 2), ou selon l'organisation de l'établissement, à son délégué à la protection des données (DPO). Un droit de réclamation existe également auprès de la CNIL (www.cnil.fr).
+
+10. Mise à jour de cette notice
+Cette notice peut être adaptée par l'enseignant·e utilisateur·rice pour refléter l'organisation propre à son établissement (coordonnées du DPO académique, procédure interne de demande d'accès, etc.) avant diffusion aux familles.

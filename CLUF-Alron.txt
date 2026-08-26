@@ -1,0 +1,29 @@
+CONTRAT DE LICENCE UTILISATEUR FINAL — ALRON
+Version 1.0
+
+Article 1 — Objet
+Le présent Contrat de Licence Utilisateur Final ("CLUF") régit les conditions dans lesquelles Calvin ORÉ (l'"Auteur") concède à l'utilisateur·rice (le "Licencié") le droit d'utiliser le logiciel Alron (le "Logiciel"). En installant, en copiant ou en utilisant le Logiciel, le Licencié accepte d'être lié par les termes du présent CLUF.
+
+Article 2 — Octroi de licence
+Sous réserve du respect du présent CLUF, l'Auteur concède au Licencié une licence personnelle, non exclusive, non transférable et révocable d'installer et d'utiliser le Logiciel, à des fins strictement professionnelles d'enseignement, sur les appareils dont il/elle a l'usage. Cette licence ne constitue pas une vente : l'Auteur conserve l'entière propriété du Logiciel.
+
+Article 3 — Restrictions
+Sauf accord écrit préalable de l'Auteur, le Licencié s'engage à ne pas : (a) redistribuer, vendre, louer, prêter ou sous-licencier le Logiciel à un tiers ; (b) le décompiler, le désassembler ou tenter d'en extraire le code source, sauf dans la mesure où la loi applicable l'autoriserait expressément malgré cette interdiction ; (c) le modifier ou créer une œuvre dérivée puis la distribuer sous quelque forme que ce soit ; (d) retirer ou altérer les mentions de propriété, de copyright ou de licence figurant dans le Logiciel.
+
+Article 4 — Propriété intellectuelle
+Le Logiciel, son code source, son interface, sa documentation et les éléments qui le composent demeurent la propriété exclusive de l'Auteur et sont protégés par le droit de la propriété intellectuelle. Le présent CLUF ne transfère au Licencié aucun droit de propriété, seulement le droit d'usage décrit à l'Article 2.
+
+Article 5 — Durée et résiliation
+Le présent CLUF prend effet dès l'acceptation ci-dessous et demeure en vigueur jusqu'à sa résiliation. L'Auteur peut le résilier de plein droit en cas de non-respect par le Licencié de l'une de ses clauses, notamment celles de l'Article 3. En cas de résiliation, le Licencié doit cesser toute utilisation du Logiciel et en détruire toute copie en sa possession.
+
+Article 6 — Garantie
+Le Logiciel est fourni "en l'état", sans garantie d'aucune sorte, expresse ou implicite, notamment sans garantie de qualité marchande, d'adéquation à un usage particulier ou d'absence d'erreur. L'Auteur ne garantit pas que le Logiciel fonctionnera sans interruption ni qu'il sera exempt de défauts.
+
+Article 7 — Limitation de responsabilité
+Dans toute la mesure permise par la loi applicable, l'Auteur ne pourra être tenu responsable d'aucun dommage direct ou indirect (perte de données, perte d'exploitation, préjudice financier ou autre) résultant de l'utilisation ou de l'impossibilité d'utiliser le Logiciel. Il incombe au Licencié de mettre en œuvre les sauvegardes appropriées (voir Paramètres > Gestion des données) et d'assurer la conformité RGPD de son propre usage du Logiciel, celui-ci fonctionnant intégralement hors-ligne et sans transmission de données à l'Auteur.
+
+Article 8 — Droit applicable
+Le présent CLUF est soumis au droit français. Tout litige relatif à sa validité, son interprétation ou son exécution relève, à défaut de résolution amiable, des juridictions compétentes.
+
+Article 9 — Acceptation
+En cochant la case "J'accepte les termes du contrat de licence" ci-dessous, le Licencié reconnaît avoir lu, compris et accepté sans réserve l'ensemble des dispositions du présent CLUF.

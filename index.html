@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alron — Le portail numérique de l'enseignant</title>
+<meta name="description" content="Alron : gestion de classe, évaluations, appréciations assistées par IA, cahier de texte, générateurs d'exercices et jeux pédagogiques — 100% hors-ligne, données 100% locales.">
+<link rel="icon" href="logo-alron.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A; --navy-mid:#122848; --navy-light:#1A3560;
+    --blue:#1A5CFF; --blue-light:#3B7BFF; --blue-pale:#E8F0FF;
+    --accent:#00C6A7; --gold:#F2B705;
+    --text:#0B1F3A; --text-mid:#4A5E7A; --text-light:#8A9BB5;
+    --border:#D4DCE8; --surface:#F4F7FB; --white:#FFFFFF;
+    --shadow:0 4px 24px rgba(11,31,58,.10); --shadow-lg:0 20px 60px rgba(11,31,58,.18);
+    --radius:14px; --radius-sm:9px;
+    --font-body:'DM Sans',system-ui,sans-serif; --font-display:'DM Serif Display',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:var(--font-body);color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:400;margin:0;letter-spacing:.2px;}
+  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
+
+  /* ===== Header ===== */
+  header{position:sticky;top:0;z-index:100;background:rgba(11,31,58,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700;font-size:17px;}
+  .brand img{width:32px;height:32px;border-radius:9px;}
+  nav.links{display:flex;gap:28px;}
+  nav.links a{color:#C7D3E8;text-decoration:none;font-size:14px;font-weight:500;transition:color .15s ease;}
+  nav.links a:hover{color:#fff;}
+  .nav-cta{background:var(--blue);color:#fff;padding:9px 18px;border-radius:999px;font-size:13.5px;font-weight:700;text-decoration:none;white-space:nowrap;transition:transform .15s ease,box-shadow .15s ease;}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(26,92,255,.4);}
+  .burger{display:none;}
+
+  /* ===== Hero ===== */
+  .hero{position:relative;background:radial-gradient(circle at 50% 15%,var(--navy-light) 0%,var(--navy) 45%,#081527 100%);overflow:hidden;padding:96px 24px 120px;text-align:center;}
+  .hero::before{content:"";position:absolute;top:-10%;left:50%;width:640px;height:640px;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,198,167,.35) 0%,rgba(26,92,255,.18) 40%,transparent 70%);filter:blur(30px);animation:pulse 7s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.7;transform:translateX(-50%) scale(1);}50%{opacity:1;transform:translateX(-50%) scale(1.08);}}
+  .hero-inner{position:relative;max-width:720px;margin:0 auto;}
+  .hero-logo{width:104px;height:104px;margin:0 auto 28px;border-radius:26px;box-shadow:0 0 60px rgba(0,198,167,.45),0 20px 50px rgba(0,0,0,.4);}
+  .hero h1{color:#fff;font-size:44px;line-height:1.18;margin-bottom:18px;}
+  .hero h1 em{font-style:italic;color:var(--accent);}
+  .hero p.lead{color:#B9C7E0;font-size:17px;max-width:560px;margin:0 auto 34px;}
+  .hero-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:38px;}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#D6E0F2;font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;}
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:700;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease;border:none;cursor:pointer;}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 30px rgba(26,92,255,.4);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(26,92,255,.5);}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22);}
+  .btn-ghost:hover{background:rgba(255,255,255,.15);transform:translateY(-2px);}
+  .btn-gold{background:var(--gold);color:#3A2C00;box-shadow:0 10px 26px rgba(242,183,5,.35);}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(242,183,5,.45);}
+
+  /* ===== Sections ===== */
+  section{padding:88px 0;}
+  .section-head{max-width:600px;margin:0 auto 52px;text-align:center;}
+  .section-head h2{font-size:32px;color:var(--navy);margin:8px 0 12px;}
+  .section-head p{color:var(--text-mid);font-size:15.5px;}
+
+  .screenshots{background:var(--white);padding-top:0;}
+  .shot-scroll{display:flex;gap:22px;overflow-x:auto;padding:6px 6px 20px;scroll-snap-type:x mandatory;}
+  .shot-scroll::-webkit-scrollbar{height:8px;}
+  .shot-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;}
+  .shot{flex:0 0 auto;width:340px;scroll-snap-align:start;}
+  .shot-frame{background:var(--navy);border-radius:12px 12px 0 0;padding:9px 12px;display:flex;gap:6px;}
+  .shot-frame span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.25);}
+  .shot-body{aspect-ratio:16/10;background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;overflow:hidden;}
+  .shot-body img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+  .shot-caption{font-size:13.5px;font-weight:600;color:var(--navy);margin-top:12px;}
+  .shot-note{text-align:center;font-size:12.5px;color:var(--text-light);margin:0;font-style:italic;}
+  .about{background:var(--white);}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  .about h2{font-size:32px;color:var(--navy);margin-bottom:16px;}
+  .about p{color:var(--text-mid);font-size:15.5px;margin-bottom:14px;}
+  .about-card{background:var(--navy);border-radius:var(--radius);padding:32px;color:#fff;position:relative;overflow:hidden;}
+  .about-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(0,198,167,.28),transparent 55%);}
+  .about-card ul{list-style:none;margin:0;padding:0;position:relative;}
+  .about-card li{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:14px;color:#D6E0F2;}
+  .about-card li:last-child{border-bottom:none;}
+  .about-card li b{color:#fff;}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:8px;flex-shrink:0;}
+
+  .features{background:var(--surface);}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent;}
+  .card .ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;}
+  .ic-blue{background:var(--blue-pale);}
+  .ic-teal{background:#E1FBF6;}
+  .ic-gold{background:#FEF3D6;}
+  .card h3{font-family:var(--font-body);font-weight:700;font-size:16px;color:var(--navy);margin-bottom:8px;}
+  .card p{font-size:14px;color:var(--text-mid);margin:0;}
+
+  .divider{display:flex;align-items:center;justify-content:center;padding:0 0 88px;}
+  .divider svg{opacity:.5;}
+
+  .notice{background:var(--white);}
+  .notice-box{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--radius);padding:44px;display:flex;align-items:center;gap:32px;color:#fff;flex-wrap:wrap;}
+  .notice-box .doc-ic{width:64px;height:64px;border-radius:16px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;}
+  .notice-box .txt{flex:1;min-width:240px;}
+  .notice-box h3{font-family:var(--font-display);font-size:22px;margin-bottom:8px;}
+  .notice-box p{color:#B9C7E0;font-size:14.5px;margin:0;}
+
+  .download{background:var(--surface);}
+  .dl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .dl-card{background:#fff;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);}
+  .dl-card h3{font-family:var(--font-body);font-weight:700;font-size:16px;color:var(--navy);margin-bottom:6px;}
+  .dl-card p{color:var(--text-mid);font-size:14px;margin:0 0 20px;}
+  .dl-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+  .tag{font-size:11.5px;font-weight:700;color:var(--text-mid);background:var(--surface);border:1px solid var(--border);padding:4px 10px;border-radius:999px;}
+
+  .support{background:var(--navy);color:#fff;text-align:center;}
+  .support h2{color:#fff;font-size:30px;margin-bottom:14px;}
+  .support p{color:#B9C7E0;max-width:520px;margin:0 auto 30px;font-size:15px;}
+
+  footer{background:#081527;color:#8496B8;padding:56px 0 28px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:16px;margin-bottom:12px;}
+  .foot-brand img{width:28px;height:28px;border-radius:8px;}
+  footer p{font-size:13.5px;line-height:1.7;max-width:280px;}
+  footer h4{color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 16px;}
+  footer ul{list-style:none;margin:0;padding:0;}
+  footer li{margin-bottom:10px;}
+  footer a{text-decoration:none;color:#8496B8;font-size:14px;transition:color .15s ease;}
+  footer a:hover{color:#fff;}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;font-size:12.5px;color:#5F7194;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .hero::before{animation:none;}
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;}
+    .grid3{grid-template-columns:1fr;}
+    .dl-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    nav.links{display:none;}
+    .hero h1{font-size:32px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand"><img src="logo-alron.png" alt="Logo Alron"> Alron</a>
+    <nav class="links">
+      <a href="#apercu">Aperçu</a>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#notice">Notice</a>
+      <a href="#telechargement">Téléchargement</a>
+      <a href="#soutenir">Soutenir</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#telechargement" class="nav-cta">Télécharger</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <img src="logo-alron.png" alt="Logo Alron" class="hero-logo">
+    <h1>Le portail numérique qui <em>allège</em> le quotidien de l'enseignant</h1>
+    <p class="lead">Classes, évaluations, cahier de texte, appréciations et exercices : Alron rassemble tout au même endroit, sur clé USB ou en local, sans jamais transmettre vos données.</p>
+    <div class="hero-badges">
+      <span class="badge">🔒 100% hors-ligne</span>
+      <span class="badge">🇫🇷 Conforme RGPD</span>
+      <span class="badge">💾 Portable, sans installation</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#telechargement" class="btn btn-primary">⬇ Télécharger Alron</a>
+      <a href="#notice" class="btn btn-ghost">📖 Consulter la notice</a>
+    </div>
+  </div>
+</section>
+
+<section class="screenshots" id="apercu">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Aperçu</span>
+      <h2>À quoi ressemble Alron</h2>
+      <p>Quelques écrans de l'application, pour savoir à quoi vous attendre avant de télécharger.</p>
+    </div>
+    <div class="shot-scroll reveal">
+      <div class="shot">
+        <div class="shot-frame"><span></span><span></span><span></span></div>
+        <div class="shot-body"><img src="dashboard.jpg" alt="Tableau de bord Alron : planning du jour, mes classes, pense-bête"></div>
+        <div class="shot-caption">Tableau de bord</div>
+      </div>
+      <div class="shot">
+        <div class="shot-frame"><span></span><span></span><span></span></div>
+        <div class="shot-body"><img src="classe.jpg" alt="Vue classe Alron : liste des élèves et progression"></div>
+        <div class="shot-caption">Vue classe</div>
+      </div>
+      <div class="shot">
+        <div class="shot-frame"><span></span><span></span><span></span></div>
+        <div class="shot-body"><img src="evaluation.jpg" alt="Grille d'évaluation Alron avec saisie des notes par élève"></div>
+        <div class="shot-caption">Grille d'évaluation</div>
+      </div>
+      <div class="shot">
+        <div class="shot-frame"><span></span><span></span><span></span></div>
+        <div class="shot-body"><img src="progression.jpg" alt="Suivi de la progression d'une classe, séquences et séances"></div>
+        <div class="shot-caption">Cahier de texte & progression</div>
+      </div>
+      <div class="shot">
+        <div class="shot-frame"><span></span><span></span><span></span></div>
+        <div class="shot-body"><img src="fiche-eleve.jpg" alt="Fiche élève 360° avec carnet de correspondance et historique"></div>
+        <div class="shot-caption">Fiche élève 360°</div>
+      </div>
+      <div class="shot">
+        <div class="shot-frame"><span></span><span></span><span></span></div>
+        <div class="shot-body"><img src="agenda.jpg" alt="Agenda et emploi du temps de l'enseignant dans Alron"></div>
+        <div class="shot-caption">Agenda & emploi du temps</div>
+      </div>
+    </div>
+    <p class="shot-note reveal">Captures issues d'une version antérieure d'Alron — l'application a évolué depuis.</p>
+  </div>
+</section>
+
+<section class="about" id="apropos">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="eyebrow">L'application</span>
+        <h2>Un seul outil pour tout le suivi pédagogique</h2>
+        <p>Alron est une application de bureau pensée pour les enseignant·es du collège et du lycée. Elle réunit dans une interface unique la gestion des classes, les évaluations, le cahier de texte, l'agenda et une bibliothèque de générateurs d'exercices — sans dépendre d'une connexion internet.</p>
+        <p>Vos données restent sur votre poste ou votre clé USB : aucune information n'est transmise à un serveur. L'application propose un export complet et une suppression individuelle des données, pour rester maître de ce que vous conservez.</p>
+        <p>Une assistance par intelligence artificielle (en ligne, optionnelle) peut vous aider à rédiger des appréciations, sans jamais remplacer votre jugement professionnel.</p>
+      </div>
+      <div class="about-card reveal">
+        <ul>
+          <li><span class="dot"></span><span><b>Gestion de classe</b> — élèves, groupes, agenda et fiches individuelles 360°.</span></li>
+          <li><span class="dot"></span><span><b>Évaluations</b> — grilles interactives, correction assistée, export PDF.</span></li>
+          <li><span class="dot"></span><span><b>Appréciations IA</b> — génération de synthèses, toujours modifiables.</span></li>
+          <li><span class="dot"></span><span><b>Cahier de texte</b> — séances, séquences et suivi de programme.</span></li>
+          <li><span class="dot"></span><span><b>Générateurs d'exercices</b> — QCM, mots croisés, mots mêlés, textes à trous, frises, cartes muettes.</span></li>
+          <li><span class="dot"></span><span><b>Espace élève</b> — mini-jeux pédagogiques pour récompenser et motiver.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="fonctionnalites">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Fonctionnalités</span>
+      <h2>Conçu pour la salle des professeurs, pas pour un data center</h2>
+      <p>Chaque module d'Alron répond à un besoin concret du quotidien en classe.</p>
+    </div>
+    <div class="grid3">
+      <div class="card reveal">
+        <div class="ic ic-blue">🗂️</div>
+        <h3>Vue classe complète</h3>
+        <p>Élèves, groupes, notes, historique de séances et fiche individuelle 360° accessibles en deux clics.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic ic-teal">📊</div>
+        <h3>Grilles d'évaluation</h3>
+        <p>Créez des grilles interactives, corrigez plus vite et exportez des bulletins et synthèses en PDF.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic ic-gold">🤖</div>
+        <h3>Appréciations assistées</h3>
+        <p>Une IA (en ligne, optionnelle) propose une base de rédaction, que vous relisez et ajustez.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic ic-blue">📅</div>
+        <h3>Cahier de texte & agenda</h3>
+        <p>Séances, séquences, calendrier et pense-bête intégrés pour suivre la progression de chaque classe.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic ic-teal">🧩</div>
+        <h3>Générateurs pédagogiques</h3>
+        <p>QCM, mots croisés, mots mêlés, anagrammes, textes à trous, frises chronologiques, cartes muettes.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic ic-gold">🔐</div>
+        <h3>Vie privée respectée</h3>
+        <p>Fonctionnement 100% local, export RGPD complet et suppression individuelle des données élèves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <svg width="120" height="24" viewBox="0 0 120 24" fill="none">
+    <path d="M2 12C22 -4 38 28 60 12C82 -4 98 28 118 12" stroke="#00C6A7" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<section class="notice" id="notice">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Documentation</span>
+      <h2>La notice, pour démarrer sereinement</h2>
+      <p>Prise en main, description des modules et réponses aux questions fréquentes.</p>
+    </div>
+    <div class="notice-box reveal">
+      <div class="doc-ic">📘</div>
+      <div class="txt">
+        <h3>Notice d'utilisation d'Alron</h3>
+        <p>Guide complet de prise en main : premier lancement, identification, création d'une classe, évaluations, cahier de texte et export des données.</p>
+      </div>
+      <a href="notice-alron.pdf" class="btn btn-primary">Ouvrir la notice (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<section class="download" id="telechargement">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Téléchargement</span>
+      <h2>Installer Alron</h2>
+      <p>Version portable pour Windows — aucune installation requise, aucune donnée transmise.</p>
+    </div>
+    <div class="dl-grid">
+      <div class="dl-card reveal">
+        <h3>⬇ Application Alron (.zip)</h3>
+        <div class="dl-meta">
+          <span class="tag">Windows 10 / 11 · 64 bits</span>
+          <span class="tag">Portable</span>
+        </div>
+        <p>Décompressez l'archive et lancez l'exécutable — depuis votre disque ou une clé USB. Un dossier de données est créé automatiquement à côté de l'application.</p>
+        <a href="alron.zip" class="btn btn-primary">Télécharger l'archive</a>
+      </div>
+      <div class="dl-card reveal">
+        <h3>📜 Licence & confidentialité</h3>
+        <div class="dl-meta">
+          <span class="tag">Usage pédagogique personnel</span>
+          <span class="tag">Licence requise</span>
+        </div>
+        <p>L'utilisation d'Alron est soumise à un contrat de licence utilisateur final. Consultez les conditions et la politique de confidentialité avant toute installation.</p>
+        <a href="CLUF-Alron.txt" class="btn btn-ghost" style="color:var(--navy);border-color:var(--border);">Lire le CLUF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="support" id="soutenir">
+  <div class="wrap" style="text-align:center;">
+    <span class="eyebrow" style="color:var(--gold);">Soutenir le projet</span>
+    <h2>Alron est développé et maintenu bénévolement</h2>
+    <p>Si l'application vous fait gagner du temps, un petit coup de pouce aide à financer l'hébergement, les licences et le temps de développement.</p>
+    <a href="https://ko-fi.com/VotrePseudoKofi" class="btn btn-gold" target="_blank" rel="noopener">☕ Soutenir sur Ko-fi</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="logo-alron.png" alt="Logo Alron"> Alron</div>
+        <p>Une application pédagogique pensée par et pour les enseignant·es, fonctionnant 100% hors-ligne.</p>
+      </div>
+      <div>
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="notice-alron.pdf">Notice d'utilisation</a></li>
+          <li><a href="CLUF-Alron.txt">CLUF</a></li>
+          <li><a href="Politique-confidentialite-Alron.txt">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:votre-email@exemple.fr">✉ votre-email@exemple.fr</a></li>
+          <li><a href="https://facebook.com/VotrePageAlron" target="_blank" rel="noopener">📘 Page Facebook</a></li>
+          <li><a href="https://ko-fi.com/VotrePseudoKofi" target="_blank" rel="noopener">☕ Ko-fi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Calvin Oré — Alron. Tous droits réservés.</span>
+      <span>Site hébergé gratuitement sur GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.15});
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

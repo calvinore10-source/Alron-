@@ -1,0 +1,7 @@
+Placez ici la notice d'utilisation destinée aux enseignant·es (PDF),
+sous le nom exact : notice-alron.pdf
+
+Aucune notice utilisateur n'a été trouvée dans l'archive fournie (seulement
+un README technique pour développeurs). Si vous n'en avez pas encore une,
+je peux vous en rédiger une à partir des fonctionnalités de l'application
+(demandez-la moi, ou utilisez le skill docx/pdf pour la mettre en page).
